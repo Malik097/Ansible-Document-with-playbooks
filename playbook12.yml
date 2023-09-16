@@ -1,0 +1,20 @@
+---
+  - name: Using Loops
+    hosts: testserver
+    tasks:
+      - name: creating multiple users
+        user:
+          name: "{{item.a}}"
+          password: "{{item.b}}"
+          home: "{{item.c}}"
+        with_items:
+          - {a: Zeeshan,b: 435246,c: /home/ubuntu/Zeeshan}
+          - {a: Umar,b: 643784,c: /home/ubuntu/Umar}
+      - name: creating files and directories in users home dir
+        file:
+          name: "{{item.a}}"
+          state: "{{item.b}}"
+        with_items:
+          - {a: /home/ubuntu/Zeeshan/file1,b: touch}
+          - {a: /home/ubuntu/Umar/dir1,b: directory}
+...

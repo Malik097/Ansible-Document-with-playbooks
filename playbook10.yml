@@ -1,0 +1,15 @@
+---
+  - name: Using Loops
+    hosts: webserver
+    tasks:
+      - name: Install software
+        apt:
+          name: "{{item}}"
+          state: present
+          update_cache: no
+          with_items:
+            - tree
+            - git
+            - tomcat8
+            - apache2
+...

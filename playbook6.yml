@@ -1,0 +1,14 @@
+---
+  - name: Using Play Scope Variable
+    hosts: all
+    vars:
+      - a: apache2
+      - b: present
+      - c: yes
+    tasks: 
+      - name: 
+        apt: 
+          name: "{{a}}"
+          state: "{{b}}"
+          update_cache: "{{c}}"
+...                

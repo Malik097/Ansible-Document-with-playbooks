@@ -1,0 +1,10 @@
+---
+  - name: Using Global Scope Variable
+    hosts: all
+    tasks:
+      - name: Install/Uninstall/Update
+        apt:
+          name: "{{a}}"
+          state: "{{b}}"
+          update_cache: "{{c}}"
+...

@@ -1,0 +1,10 @@
+--- 
+  - name: Using Host Scope Variable
+    hosts: Priv.IP of M/c ur Using
+    tasks:
+      - name: Installing softwares
+        apt: 
+          name: "{{a}}"
+          state: "{{b}}"
+          update_cache: "{{c}}"
+...          

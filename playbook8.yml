@@ -1,0 +1,10 @@
+---
+  - name: Using Host Scope Variable
+    hosts: webserver
+    tasks:
+      - name: Installing mvn 
+        apt: 
+          name: "{{f}}"
+          state: "{{g}}"
+          update_cache: "{{h}}"
+...          
